@@ -44,6 +44,7 @@ def setUpPopulationTable(data_json, cur, conn, limit=20):
 # 	cur (SQL obj) Cursor for the database
 # 	conn(SQL Obj) Connection to the database
 # limit (int) limit for the number of new entries added to the table. value is 20
+# To prevent duplicate entries to the database during multiple runs of the script, the option ‘OR IGNORE’ 
 
 
 def setUpPovertyTable(data_json, cur, conn, limit=20):

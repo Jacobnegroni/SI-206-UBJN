@@ -39,6 +39,12 @@ def setUpPopulationTable(data_json, cur, conn, limit=20):
     conn.commit()
     print(str(nrows)+"/364 entries in the Population table")
 #  Creates the Table Population in the project.db database if it does not exist. Each dictionary in the list contains the keys (ID State, Year, State,P opulation). If the new total number of rows equals the nrows+limit number, the for loop is exited by using the break command. Changes are committed.
+# Parameters:
+# 	data_json (list of dict) Dictionary containing the data
+# 	cur (SQL obj) Cursor for the database
+# 	conn(SQL Obj) Connection to the database
+# limit (int) limit for the number of new entries added to the table. value is 20
+
 
 def setUpPovertyTable(data_json, cur, conn, limit=20):
     cur.execute("CREATE TABLE IF NOT EXISTS Poverty (id TEXT PRIMARY KEY, year INTEGER, state TEXT, poverty_rate INTEGER)")

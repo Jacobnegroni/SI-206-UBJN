@@ -50,3 +50,9 @@ def write_results(years, total_population, total_poverty):
     for year in years:
     	file.write(str(year)+'\t'+str(total_population[year])+'\t'+str(total_poverty[year])+'\n')
     file.close()
+
+cur, conn = setUpDatabase('project.db')
+years = find_years(cur)
+total_population = find_total_population(cur, years)
+total_poverty = find_total_poverty(cur, years)
+write_results(years, total_population, total_poverty)
